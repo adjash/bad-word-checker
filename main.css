@@ -149,18 +149,27 @@ header {
   width: 90vw;
   margin: 0 auto;
 }
+.input__area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .content__area {
   border: 2px solid black;
   border-radius: 8px;
   position: relative;
+  width: 100%;
   min-height: 3rem;
 }
 a.check__btn {
   background-color: black;
   color: white;
   text-decoration: none;
-  padding: 1rem 2.5rem;
+  padding: 0.5rem 2rem;
   display: inline-block;
+  border-radius: 8px;
+  margin-top: 1rem;
 }
 .mark {
   background-color: yellow;
