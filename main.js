@@ -325,16 +325,16 @@ const bannedWords = ['anti-bacterial',
 ];
 document.addEventListener('DOMContentLoaded', () => {
     let checkButton = document.querySelector('.check__btn');
-    let textArea = document.querySelector('textarea');
+    let inputText = document.querySelector('.content__area');
+    let outputText = document.querySelector('.output__text');
 
     checkButton.addEventListener('click', (e) => {
-        let inputString = textArea.value.split(" ");
-        for (let i = 0; i < inputString.length; i++) {
-            if (bannedWords.includes(inputString[i])) {
-                inputString[i] = `<mark>${inputString[i]}</mark>`;
-            }
-        }
-        let outputText = document.querySelector('.output__text');
-        outputText.innerHTML = inputString.join(" ");
+        e.preventDefault();
+        let innerTextContent = inputText.innerText;
+        bannedWords.forEach(word => {
+            innerTextContent = innerTextContent.replaceAll(word, `<span class="mark">${word}</span>`);
+        });
+        inputText.innerText = '';
+        outputText.innerHTML = innerTextContent;
     });
 });
