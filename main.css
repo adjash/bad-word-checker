@@ -161,6 +161,8 @@ header {
   position: relative;
   width: 100%;
   min-height: 3rem;
+  cursor: text;
+  padding: 1rem 1rem;
 }
 a.check__btn {
   background-color: black;
@@ -173,4 +175,8 @@ a.check__btn {
 }
 .mark {
   background-color: yellow;
+}
+h1 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
 }

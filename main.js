@@ -330,14 +330,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     checkButton.addEventListener('click', (e) => {
         e.preventDefault();
-        let innerTextContent = inputText.innerText.toLowerCase();
-        bannedWords.forEach(word => {
 
-            innerTextContent = innerTextContent.replaceAll(`${word.toLowerCase()}`, `<span class="mark">${word}</span>`);
+        let innerTextContent = inputText.innerText;
+
+        bannedWords.forEach(word => {
+            innerTextContent = innerTextContent.replaceAll(`${word.toLowerCase()}`, `<span class="mark">${word.toLowerCase()}</span>`);
         });
         let innerTextBreaks = innerTextContent.split("\n\n");
-        innerTextContent.replaceAll('\n\n', '<br>');
-        console.log(innerTextBreaks);
 
         inputText.innerText = '';
         innerTextBreaks.forEach(paragraph => {
