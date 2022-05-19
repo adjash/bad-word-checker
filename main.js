@@ -332,10 +332,16 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         let innerTextContent = inputText.innerText.toLowerCase();
         bannedWords.forEach(word => {
-            innerTextContent = innerTextContent.replaceAll(`${word.toLowerCase()}`, `<span class="mark">${word}</span>`);
 
+            innerTextContent = innerTextContent.replaceAll(`${word.toLowerCase()}`, `<span class="mark">${word}</span>`);
         });
+        let innerTextBreaks = innerTextContent.split("\n\n");
+        innerTextContent.replaceAll('\n\n', '<br>');
+        console.log(innerTextBreaks);
+
         inputText.innerText = '';
-        outputText.innerHTML = innerTextContent;
+        innerTextBreaks.forEach(paragraph => {
+            outputText.innerHTML += `${paragraph} <br><br>`;
+        })
     });
 });
