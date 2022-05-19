@@ -340,7 +340,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         inputText.innerText = '';
         innerTextBreaks.forEach(paragraph => {
-            outputText.innerHTML += `${paragraph} <br><br>`;
+            outputText.innerHTML += `${paragraph}`;
+            outputText.innerHTML += `<br>`;
         })
     });
 });
