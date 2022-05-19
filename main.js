@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     checkButton.addEventListener('click', (e) => {
         e.preventDefault();
-
+        outputText.innerHTML = '';
         let innerTextContent = inputText.innerText;
 
         bannedWords.forEach(word => {
